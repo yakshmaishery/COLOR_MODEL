@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self';">
+    <title>Color Picker</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+            font-family: Arial, Helvetica, sans-serif;
+            color: white;
+        }
+        body{
+            display: grid;
+            background-color: rgb(64, 65, 62);
+        }
+        .container{
+            display: grid;
+            grid-template-columns: auto 30%;
+            row-gap: 10px;
+            column-gap: 10px;
+            background-color: rgb(64,65,62);
+        }
+        .sliderbars{
+            display: flex;
+            flex-direction: column;
+            row-gap: 20px;
+            grid-row: 3;
+            grid-column: 1;
+            /* border: 1px solid black; */
+            justify-content: space-around;
+        }
+        .sliderbars div{
+            display: flex;
+            width: 100%;
+            column-gap: 10px;
+        }
+        .sliderbars div input[type=range]{
+            width: 100%;
+            cursor: pointer;
+        }
+        header{
+            font-size: xx-large;
+            text-align: center;
+            padding: 1em 0px;
+            grid-row: 2;
+            grid-column: 1/span 2;
+            /* border: 1px solid black; */
+        }
+        #colorchoosen{
+            height: 20vh;
+            width: 20vw;
+            /* border: 1px solid black; */
+            grid-row: 3;
+            grid-column: 2;
+            justify-self: center;
+            background-color: black;
+        }
+        .colorvalues{
+            /* border: 1px solid black; */
+            grid-column: 1/span 2;
+            grid-row: 5;
+            justify-content: center;
+            padding-left: 3em;
+            display: flex;
+            flex-direction: column;
+        }
+        .colorvalues ul{
+            font-size: x-large;
+            font-family :Arial, Helvetica, sans-serif;
+            list-style:none;
+        }
+        .colorvalues ul li{
+            padding: 10px 0em;
+        }
+        .titlebar{
+            grid-column: 1/span 2;
+            grid-row: 1;
+            display: grid;
+            grid-template-columns: auto 2em 2em 2em;
+            font-size: x-large;
+            background-color: rgb(30,31,28);
+        }
+        .mainbtn{
+            background-color: transparent;
+            border: 0px;
+        }
+        .mainbtn:hover{background-color: rgb(48, 49, 47);}
+        .title{
+            -webkit-app-region:drag;
+            padding: 0px 1em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- titlebar -->
+        <div class="titlebar">
+            <h3 class="title">Color Picker</h3>
+            <Button class="mainbtn" id="minbtn">➖</Button>
+            <Button class="mainbtn" id="maxbtn">🔲</Button>
+            <Button class="mainbtn" id="closebtn">✖</Button>
+        </div>
+        <!-- Heading -->
+        <header>Color Picker</header>
+        <!-- Sliderbars -->
+        <div class="sliderbars">
+            <div>
+                <h3>R</h3>
+                <input type="range" name="R" id="R_range" value="0" min="0" max="255">
+            </div>
+            <div>
+                <h3>G</h3>
+                <input type="range" name="G" id="G_range" value="0" min="0" max="255">
+            </div>
+            <div>
+                <h3>B</h3>
+                <input type="range" name="B" id="B_range" value="0" min="0" max="255">
+            </div>
+        </div>
+        <!-- color background -->
+        <div id="colorchoosen"></div>
+        <!-- Color Values -->
+        <div class="colorvalues">
+            <ul>
+                <li id="rgbvalue">RGB - (0,0,0)</li>
+                <li id="hexvalue">HEX - #000000</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

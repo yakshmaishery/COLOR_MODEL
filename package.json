@@ -1,0 +1,15 @@
+{
+  "name": "color_picker",
+  "version": "1.0.0",
+  "description": "This is a Color Picker App",
+  "main": "App.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "colorsys": "^1.0.22",
+    "electron": "^18.0.4"
+  }
+}
